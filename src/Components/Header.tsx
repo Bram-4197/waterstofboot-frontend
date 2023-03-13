@@ -1,4 +1,11 @@
-import { Button, Divider, Flex, Img, useColorMode } from "@chakra-ui/react";
+import {
+  Button,
+  Divider,
+  Flex,
+  Image,
+  Img,
+  useColorMode,
+} from "@chakra-ui/react";
 import React from "react";
 import Sun from "../assets/Sun.svg";
 import Moon from "../assets/Moon.svg";
@@ -13,18 +20,14 @@ function Header() {
         w="100%"
         paddingLeft={2}
         position="fixed"
-        borderBottomWidth={10}
       >
         <MdHome />
-        <Button onClick={toggleColorMode}>
-          {colorMode != "dark" ? (
-            <img src={Moon} onClick={toggleColorMode}></img>
-          ) : (
-            <img src={Sun} onClick={toggleColorMode}></img>
-          )}
-        </Button>
+        {colorMode != "dark" ? (
+          <Image src={Moon} onClick={toggleColorMode} paddingTop={1}></Image>
+        ) : (
+          <Image src={Sun} onClick={toggleColorMode} paddingTop={1}></Image>
+        )}
       </Flex>
-      <Divider />
     </div>
   );
 }
